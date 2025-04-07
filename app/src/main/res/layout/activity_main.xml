@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/eggshell"
     tools:context=".MainActivity">
 
     <!--Title text
@@ -37,15 +38,82 @@
 
     <!--Create Button-->
     <Button
-        android:id="@+id/button"
+        android:id="@+id/create_button"
         android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="81dp"
         android:text="@string/create"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <!--Home Button-->
+    <Button
+        android:id="@+id/home_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="81dp"
+        android:text="@string/home"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_button" />
+
+    <!--Train Button-->
+    <Button
+        android:id="@+id/train_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="81dp"
+        android:text="@string/train"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_button" />
+
+    <!--Fight Button-->
+    <Button
+        android:id="@+id/fight_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="81dp"
+        android:text="@string/fight"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/train_button" />
+
+    <!--Stats Button-->
+    <Button
+        android:id="@+id/stats_button"
+        android:layout_width="250dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="81dp"
+        android:text="@string/stats"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:backgroundTint="@color/red"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fight_button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
