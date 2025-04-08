@@ -8,4 +8,15 @@
     <string name="fight">Fight</string>
     <string name="home">Home</string>
     <string name="stats">Stats</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="createText">Create Lutemon!</string>
+    <string name="chooseColor">Choose Color</string>
+    <string name="black">Black</string>
+    <string name="blue">Blue</string>
+    <string name="yellow">Yellow</string>
+    <string name="green">Green</string>
+    <string name="red">Red</string>
+    <string name="name">Name</string>
+
 </resources>
