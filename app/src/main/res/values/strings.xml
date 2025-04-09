@@ -2,6 +2,7 @@
     <string name="app_name">LutemonGO</string>
     <string name="welcome">Welcome to Lutemon!</string>
     <string name="lutemonball">Lutemonball</string>
+    <string name="placeholder">placeholder</string>
 
     <string name="train">Train</string>
     <string name="create">Create</string>
@@ -9,6 +10,7 @@
     <string name="home">Home</string>
     <string name="stats">Stats</string>
     <string name="cancel">Cancel</string>
+    <string name="main">Main</string>
 
     <string name="createText">Create Lutemon!</string>
     <string name="chooseColor">Choose Color</string>
@@ -18,5 +20,9 @@
     <string name="green">Green</string>
     <string name="red">Red</string>
     <string name="name">Name</string>
+
+    <string name="view_charts">View Charts</string>
+    <string name="general_stats">General Stats</string>
+    <string name="lutemon_performance">Lutemon Performance</string>
 
 </resources>
