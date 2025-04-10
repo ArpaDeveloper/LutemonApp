@@ -31,5 +31,6 @@
     <string name="view_charts">View Charts</string>
     <string name="general_stats">General Stats</string>
     <string name="lutemon_performance">Lutemon Performance</string>
+    <string name="move_lutemon">select to move</string>
 
 </resources>
