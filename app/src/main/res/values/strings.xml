@@ -10,6 +10,7 @@
     <string name="experience">Experience</string>
     <string name="color">Color</string>
     <string name="placeholder">placeholder</string>
+    <string name="number">num</string>
 
     <string name="train">Train</string>
     <string name="create">Create</string>
@@ -31,6 +32,10 @@
     <string name="view_charts">View Charts</string>
     <string name="general_stats">General Stats</string>
     <string name="lutemon_performance">Lutemon Performance</string>
+
     <string name="move_lutemon">select to move</string>
+    <string name="battles">Battles</string>
+    <string name="wins">Wins</string>
+    <string name="training">Training</string>
 
 </resources>
