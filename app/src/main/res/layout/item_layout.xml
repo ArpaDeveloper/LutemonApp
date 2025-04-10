@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="135dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!--Lutemon Image-->
+        <ImageView
+            android:id="@+id/lutemonImage"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginEnd="311dp"
+            android:contentDescription="@string/lutemon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/lutemonball" />
+
+        <!--Name text-->
+        <TextView
+            android:id="@+id/lutemonNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="125dp"
+            android:text="@string/name"
+            android:textSize="25sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lutemonImage"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!--Color text-->
+        <TextView
+            android:id="@+id/lutemonColorText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="125dp"
+            android:text="@string/color"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/lutemonImage"
+            app:layout_constraintTop_toBottomOf="@+id/lutemonNameText" />
+
+        <!--Experience text-->
+        <TextView
+            android:id="@+id/lutemonExpText"
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/experience"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/lutemonImage"
+            app:layout_constraintTop_toBottomOf="@+id/lutemonColorText" />
+
+
+        <!--Attack text-->
+        <TextView
+            android:id="@+id/lutemonAtkText"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/attack"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/lutemonImage"
+            app:layout_constraintTop_toBottomOf="@+id/lutemonExpText" />
+
+        <!--Defence text-->
+        <TextView
+            android:id="@+id/lutemonDefText"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/defence"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/lutemonAtkText"
+            app:layout_constraintTop_toBottomOf="@+id/lutemonExpText" />
+
+        <!--Health point text-->
+        <TextView
+            android:id="@+id/lutemonHpText"
+            android:layout_width="142dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/hp"
+            android:textSize="20sp"
+            app:layout_constraintStart_toEndOf="@+id/lutemonExpText"
+            app:layout_constraintTop_toBottomOf="@+id/lutemonColorText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,13 @@
     <string name="app_name">LutemonGO</string>
     <string name="welcome">Welcome to Lutemon!</string>
     <string name="lutemonball">Lutemonball</string>
+    <string name="lutemon">Lutemon</string>
+    <string name="attack">Attack</string>
+    <string name="defence">Defence</string>
+    <string name="health_points">Health points</string>
+    <string name="hp">Hp</string>
+    <string name="experience">Experience</string>
+    <string name="color">Color</string>
     <string name="placeholder">placeholder</string>
 
     <string name="train">Train</string>
