@@ -39,4 +39,7 @@
     <string name="wins">Wins</string>
     <string name="training">Training</string>
 
+    <string name="train_lutemon">Train Lutemon</string>
+    <string name="move_lutemon_to_home">Move home</string>
+
 </resources>

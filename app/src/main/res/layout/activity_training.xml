@@ -22,36 +22,37 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <!--Fight Button-->
+    <!--Move Home Button-->
     <Button
-        android:id="@+id/moveFightButton"
-        android:layout_width="125dp"
+        android:id="@+id/moveHomeButton"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
-        android:layout_marginBottom="5dp"
-        android:text="@string/fight"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/move_lutemon_to_home"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/main_button"
-        app:layout_constraintEnd_toStartOf="@+id/moveTrainButton"
+        app:layout_constraintBottom_toTopOf="@+id/moveTrainButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <!--Train Button-->
     <Button
         android:id="@+id/moveTrainButton"
-        android:layout_width="125dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
+        android:layout_marginStart="80dp"
         android:layout_marginEnd="81dp"
-        android:layout_marginBottom="5dp"
+        android:layout_marginBottom="8dp"
         android:text="@string/train"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toTopOf="@+id/main_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/moveFightButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!--Main Button-->
     <Button
