@@ -12,46 +12,47 @@
     please use @string for texts
     -->
     <TextView
-        android:id="@+id/homeText"
+        android:id="@+id/trainingTitleText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="@string/home"
+        android:text="@string/battlefield"
         android:textSize="25sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
-    <!--Fight Button-->
+    <!--Next Attack Button-->
     <Button
-        android:id="@+id/moveFightButton"
-        android:layout_width="125dp"
+        android:id="@+id/nextAttackButton"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="80dp"
-        android:layout_marginBottom="5dp"
-        android:text="@string/fight"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/next_attack"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@color/blue"
-        app:layout_constraintBottom_toTopOf="@+id/main_button"
-        app:layout_constraintEnd_toStartOf="@+id/moveTrainButton"
+        app:layout_constraintBottom_toTopOf="@+id/endBattleButton"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!--Train Button-->
+    <!--End Battle Button-->
     <Button
-        android:id="@+id/moveTrainButton"
-        android:layout_width="125dp"
+        android:id="@+id/endBattleButton"
+        android:layout_width="250dp"
         android:layout_height="50dp"
+        android:layout_marginStart="80dp"
         android:layout_marginEnd="81dp"
-        android:layout_marginBottom="5dp"
-        android:text="@string/train"
+        android:layout_marginBottom="8dp"
+        android:text="@string/end_battle"
         android:textColor="@color/black"
         android:textSize="20sp"
         app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toTopOf="@+id/main_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/moveFightButton" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <!--Main Button-->
     <Button
@@ -69,15 +70,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="409dp"
-        android:layout_height="450dp"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="1dp"
+    <!--Battlefield text-->
+    <TextView
+        android:id="@+id/battlefieldText"
+        android:layout_width="0dp"
+        android:layout_height="252dp"
+        android:layout_marginBottom="55dp"
+        android:text="@string/placeholder"
+        app:layout_constraintBottom_toTopOf="@+id/nextAttackButton"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/placeholder"
-        app:layout_constraintTop_toBottomOf="@+id/homeText" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
