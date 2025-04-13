@@ -81,16 +81,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <!--Battle image-->
-    <ImageView
-        android:id="@+id/battleImage"
-        android:layout_width="153dp"
-        android:layout_height="132dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="120dp"
-        android:contentDescription="@string/placeholder"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/trainingTitleText"
-        app:srcCompat="@drawable/battle" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

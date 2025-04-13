@@ -45,4 +45,8 @@
     <string name="next_attack">Next Attack</string>
     <string name="end_battle">End Battle</string>
 
+    <string name="attack_format">Attack: %d</string>
+    <string name="defence_format">Defence: %d</string>
+    <string name="health_format">HP: %d</string>
+
 </resources>
