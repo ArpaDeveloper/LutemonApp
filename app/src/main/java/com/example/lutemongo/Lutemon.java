@@ -4,22 +4,21 @@ public class Lutemon {
 
     //Variables
     private String name;
-    private int color;
+    private String color;
     private int attack;
     private int health;
     private int max_health;
     private int defence;
-    private int id;
-    private int id_counter;
+    private int experience;
 
     //Constructor
-    public Lutemon(String name, int  color, int attack, int max_health, int defence, int id){
+    public Lutemon(String name, String  color, int attack,int health, int max_health, int defence, int experience){
         this.name = name;
         this.color = color;
         this.attack = attack;
         this.max_health = max_health;
         this.defence = defence;
-        this.id = id;
+        this.experience = experience;
     }
 
     //Getters
@@ -27,12 +26,16 @@ public class Lutemon {
         return name;
     }
 
-    public int getColor(){
+    public String getColor(){
         return color;
     }
 
     public int getAttack(){
         return attack;
+    }
+
+    public int getHealth(){
+        return health;
     }
 
     public int getMaxHealth(){
@@ -43,21 +46,26 @@ public class Lutemon {
         return defence;
     }
 
-    public int getId(){
-        return id;
+    public int getExperience(){
+        return experience;
     }
+
 
     //Setters
     public void setName(String name){
         this.name = name;
     }
 
-    public void setColor(int color){
+    public void setColor(String color){
         this.color = color;
     }
 
     public void setAttack(int attack){
         this.attack = attack;
+    }
+
+    public void setHealth(int health){
+        this.health = max_health;
     }
 
     public void setMaxHealth(int max_health){
@@ -68,8 +76,9 @@ public class Lutemon {
         this.defence = defence;
     }
 
-    public void setId(int id){
-        this.id = id;
+    public void setExperience(int experience){
+        this.experience = experience;
     }
+
 
 }

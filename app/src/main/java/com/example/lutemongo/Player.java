@@ -5,7 +5,7 @@ public class Player {
     public Storage storage;
     public Team team;
 
-    public void createLutemon() {
+    //public void createLutemon() {
 
-    }
+//    }
 }

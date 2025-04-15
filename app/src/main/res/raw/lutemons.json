@@ -1,0 +1,29 @@
+[
+  {
+    "name": "Pikatsu",
+    "color": "yellow",
+    "attack": 10,
+    "health": 20,
+    "max_health": 20,
+    "defence": 5,
+    "experience": 1
+  },
+  {
+    "name": "Charmander",
+    "color": "red",
+    "attack": 12,
+    "health": 15,
+    "max_health": 15,
+    "defence": 2,
+    "experience": 1
+  },
+  {
+    "name": "Rowlet",
+    "color": "green",
+    "attack": 5,
+    "health": 23,
+    "max_health": 25,
+    "defence": 10,
+    "experience": 2
+  }
+]
