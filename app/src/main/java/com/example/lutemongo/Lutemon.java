@@ -10,6 +10,7 @@ public class Lutemon {
     private int max_health;
     private int defence;
     private int experience;
+    private boolean isSelected = false;
 
     //Constructor
     public Lutemon(String name, String  color, int attack,int health, int max_health, int defence, int experience){
@@ -19,6 +20,15 @@ public class Lutemon {
         this.max_health = max_health;
         this.defence = defence;
         this.experience = experience;
+    }
+
+    //Used for the lutemon selection
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 
     //Getters

@@ -1,7 +1,10 @@
-package com.example.lutemongo;
+package com.example.lutemongo.activities;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.lutemongo.R;
+import com.example.lutemongo.ui.UIHandler;
 
 public class FightActivity extends AppCompatActivity {
 

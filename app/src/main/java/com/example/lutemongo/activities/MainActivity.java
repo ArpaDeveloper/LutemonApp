@@ -1,12 +1,17 @@
-package com.example.lutemongo;
+package com.example.lutemongo.activities;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.example.lutemongo.R;
+import com.example.lutemongo.Storage;
+import com.example.lutemongo.ui.UIHandler;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -17,6 +22,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_main);
+
+        // Load saved Lutemons
+        Storage storage = Storage.getInstance();
+        if (storage.loadFromSharedPreferences(this)) {
+            int count = storage.getLutemonCount();
+            if (count > 0) {
+                Toast.makeText(this, "Loaded " + count + " Lutemons", Toast.LENGTH_SHORT).show();
+            }
+        }
+
         UIHandler uiHandler = new UIHandler(this);
         uiHandler.setupMainActivityButtons(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -24,7 +39,6 @@ public class MainActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
     }
 
 }

@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
     <!--Title text
     please use @string for texts
@@ -71,14 +71,15 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/RecyclerViewTraining"
         android:layout_width="409dp"
-        android:layout_height="150dp"
+        android:layout_height="306dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="1dp"
+        android:contentDescription="@string/placeholder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/placeholder"
         app:layout_constraintTop_toBottomOf="@+id/trainingTitleText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

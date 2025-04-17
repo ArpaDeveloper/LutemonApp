@@ -1,4 +1,6 @@
-package com.example.lutemongo;
+package com.example.lutemongo.actions;
+
+import com.example.lutemongo.Player;
 
 public class TrainingArea {
     public Player player;

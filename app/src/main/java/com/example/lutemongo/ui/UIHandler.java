@@ -1,4 +1,4 @@
-package com.example.lutemongo;
+package com.example.lutemongo.ui;
 
 import android.app.Activity;
 import android.content.Context;
@@ -8,6 +8,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+
+import com.example.lutemongo.Lutemon;
+import com.example.lutemongo.actions.MoveLutemons;
+import com.example.lutemongo.activities.MainActivity;
+import com.example.lutemongo.R;
+import com.example.lutemongo.activities.CreateActivity;
+import com.example.lutemongo.activities.FightActivity;
+import com.example.lutemongo.activities.HomeActivity;
+import com.example.lutemongo.activities.StatisticsActivity;
+import com.example.lutemongo.activities.TrainingActivity;
 
 /**
  * Handles UI interactions and navigation between screens

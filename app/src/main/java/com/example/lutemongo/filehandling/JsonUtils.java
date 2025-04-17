@@ -1,8 +1,11 @@
-package com.example.lutemongo;
+package com.example.lutemongo.filehandling;
 
 //Imports
 import android.content.Context;
 import android.util.Log;
+
+import com.example.lutemongo.Lutemon;
+import com.example.lutemongo.ui.ErrorHandler;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -98,11 +101,8 @@ public class JsonUtils {
             Log.e(TAG, "Error: Unexpected, Try again", e);
             message = "Unexpected error, Try again";
         }
-        //If the context is from HomeActivity call the print method there
-        if (context instanceof HomeActivity) {
-            HomeActivity homeActivity = (HomeActivity) context;
-            homeActivity.showError(message);
-        }
+
+        ErrorHandler.showError(context, message);
     }
 
     //Getter to call the error handling
