@@ -1,19 +1,23 @@
 package com.example.lutemongo.activities;
 
 import android.os.Bundle;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.lutemongo.Lutemon;
 import com.example.lutemongo.R;
-import com.example.lutemongo.filehandling.LoadLutemonsFromFile;
+import com.example.lutemongo.Storage;
+import com.example.lutemongo.ui.LutemonAdapter;
 import com.example.lutemongo.ui.RecyclerViewUtil;
 import com.example.lutemongo.ui.UIHandler;
 
-
+import java.util.List;
 
 public class HomeActivity extends AppCompatActivity {
+
+    private LutemonAdapter adapter;
+    private List<Lutemon> lutemons;
+    private Storage storage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,11 +30,29 @@ public class HomeActivity extends AppCompatActivity {
         // Set up button listeners for HomeActivity
         uiHandler.setupHomeActivityButtons(this);
 
-        //Setup the RecyclerView for Home
+        // Setup the RecyclerView for Home
         RecyclerView recyclerView = RecyclerViewUtil.setupRecyclerView(this, R.id.RecyclerViewHome);
 
-        //Load the data from Json
-        LoadLutemonsFromFile loader = new LoadLutemonsFromFile(this, recyclerView, R.layout.item_layout_home);
-        loader.loadLutemonData();
+        // Get Lutemons from Storage singleton
+        storage = Storage.getInstance();
+        lutemons = storage.getLutemons();
+
+        // Create and set the adapter
+        if (lutemons != null && !lutemons.isEmpty()) {
+            adapter = new LutemonAdapter(lutemons, position -> {
+                // Handle click on lutemon item
+                Lutemon clickedLutemon = lutemons.get(position);
+                // Set as team lutemon when clicked
+                if (storage.setTeamLutemon(clickedLutemon)) {
+                    // Only update the items that might have changed visually
+                    // based on team selection status
+                    for (int i = 0; i < lutemons.size(); i++) {
+                        adapter.notifyItemChanged(i);
+                    }
+                }
+            }, R.layout.item_layout_home);
+
+            recyclerView.setAdapter(adapter);
+        }
     }
 }
