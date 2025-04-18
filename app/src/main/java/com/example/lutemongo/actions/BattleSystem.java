@@ -103,11 +103,12 @@ public class BattleSystem {
             if (teamLutemon.getHealth() > 0) {
                 battleLog.append(teamLutemon.getName()).append(" wins the battle!\n");
                 teamLutemon.setWins(enemyLutemon.getWins() + 1);
-                // teamLutemon.setExperience(teamLutemon.getExperience() + 10);
+                teamLutemon.setExperience(teamLutemon.getExperience() + 1);
                 // battleLog.append(teamLutemon.getName()).append(" gained 10 experience points!\n");
             } else {
                 battleLog.append(enemyLutemon.getName()).append(" wins the battle!\n");
                 enemyLutemon.setWins(enemyLutemon.getWins() + 1);
+                enemyLutemon.setExperience(enemyLutemon.getExperience() + 1);
             }
         }
 
