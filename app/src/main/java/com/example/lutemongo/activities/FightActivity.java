@@ -1,9 +1,15 @@
 package com.example.lutemongo.activities;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.widget.Button;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.lutemongo.R;
+import com.example.lutemongo.actions.BattleSystem;
+import com.example.lutemongo.lutemonhandling.Storage;
 import com.example.lutemongo.ui.UIHandler;
 
 public class FightActivity extends AppCompatActivity {
@@ -18,5 +24,15 @@ public class FightActivity extends AppCompatActivity {
 
         // Setup buttons for this activity
         uiHandler.setupFightActivityButtons(this);
+
+        Button FightButton = findViewById(R.id.nextAttackButton);
+        TextView battleText = findViewById(R.id.battlefieldText);
+        FightButton.setOnClickListener(v -> {
+            String battleinfo = BattleSystem.startBattle();
+        });
+
+        battleText.setText();
+
+
     }
 }
