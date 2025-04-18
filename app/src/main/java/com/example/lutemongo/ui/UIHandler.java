@@ -207,10 +207,9 @@ public class UIHandler {
             fightButton.setOnClickListener(v -> goToFightScreen());
         }
 
-        if (trainButton != null) {
-          //  trainButton.setOnClickListener(v -> goToTrainingScreen());
-
-        }
+        //if (trainButton != null) {
+            //trainButton.setOnClickListener(v -> goToTrainingScreen());
+       // } ALA KAYTA
 
         if (mainButton != null) {
             mainButton.setOnClickListener(v -> goToMainScreen());
