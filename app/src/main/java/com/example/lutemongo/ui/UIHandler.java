@@ -22,9 +22,7 @@ import com.example.lutemongo.activities.TrainingActivity;
  * Handles UI interactions and navigation between screens
  */
 public class UIHandler {
-
     private final Context context;
-
     public UIHandler(@NonNull Context context) {
         this.context = context;
     }

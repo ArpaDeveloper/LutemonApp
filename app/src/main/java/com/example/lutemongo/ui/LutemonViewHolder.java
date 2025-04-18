@@ -54,7 +54,6 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
             trainingTextView = itemView.findViewById(R.id.trainingNumberText);
         }
 
-
         // Define a listener
         itemView.setOnClickListener(v -> {
             int position = getAdapterPosition();
