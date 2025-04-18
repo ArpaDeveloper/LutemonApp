@@ -47,13 +47,4 @@ public class LutemonManager {
         }
     }
 
-    public void moveLutemonHome() {
-        List<Lutemon> lutemons = storage.getLutemons();
-        List<Lutemon> trainingLutemonList = new ArrayList<>();
-
-
-        Lutemon trainingLutemon = storage.getTrainingLutemon(); // Get the single Lutemon object
-        //trainingLutemonList.(trainingLutemon);
-
-    }
 }

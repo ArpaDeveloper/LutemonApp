@@ -127,6 +127,10 @@ public class Storage {
         return activeTrainingLutemon;
     }
 
+    public void emptyTraining(){
+        activeTrainingLutemon = null;
+    }
+
     /**
      * Remove a Lutemon from storage
      * @param lutemon The Lutemon to remove

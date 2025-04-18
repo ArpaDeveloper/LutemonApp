@@ -53,12 +53,8 @@ public class TrainingActivity extends AppCompatActivity {
 
         Button moveToHomeButton = findViewById(R.id.moveHomeButton);
         moveToHomeButton.setOnClickListener(v -> {
-            if (lutemonManager != null) {
-                lutemonManager.moveSelectedLutemonsToTraining(); // Safely call the method
-            } else {
-                // Handle the case where LutemonManager is still null
-                Log.e("HomeActivity", "LutemonManager is not initialized.");
-            }
+           trainingLutemonsList.clear();
+            recyclerView.setAdapter(adapter);
         });
     }
 
