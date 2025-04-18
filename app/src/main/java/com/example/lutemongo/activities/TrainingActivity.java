@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lutemongo.R;
 import com.example.lutemongo.actions.TrainingArea;
 import com.example.lutemongo.lutemonhandling.Lutemon;
-import com.example.lutemongo.lutemonhandling.LutemonManager;
 import com.example.lutemongo.lutemonhandling.Storage;
 import com.example.lutemongo.ui.LutemonAdapter;
 import com.example.lutemongo.ui.RecyclerViewUtil;
@@ -21,10 +20,11 @@ import com.example.lutemongo.ui.UIHandler;
 import java.util.ArrayList;
 import java.util.List;
 
-
+/**
+ * TrainingActivity handles training ui actions
+ */
 public class TrainingActivity extends AppCompatActivity {
 
-    private LutemonManager lutemonManager;
     private boolean isLoading = false;
 
     @Override
@@ -32,13 +32,13 @@ public class TrainingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
 
-        // Initialize the UIHandler
+        //Initialize the UIHandler
         UIHandler uiHandler = new UIHandler(this);
 
-        // Set up button listeners for TrainingActivity
+        //Set up button listeners for TrainingActivity
         uiHandler.setupTrainingActivityButtons(this);
 
-        // Setup the RecyclerView for Training
+        //Setup the RecyclerView for Training
         RecyclerView recyclerView = RecyclerViewUtil.setupRecyclerView(this, R.id.RecyclerViewTraining);
 
         //Initialize Storage
@@ -46,44 +46,46 @@ public class TrainingActivity extends AppCompatActivity {
 
         //List for the training lutemon
         List<Lutemon> trainingLutemonsList = new ArrayList<>();
-        Lutemon trainingLutemon = storage.getTrainingLutemon(); // Get the single Lutemon object
+        Lutemon trainingLutemon = storage.getTrainingLutemon();
         trainingLutemonsList.add(trainingLutemon);
 
         //Initialize adapter
         LutemonAdapter adapter = new LutemonAdapter(trainingLutemonsList, lutemon -> {
         }, R.layout.item_layout_home);
-        lutemonManager = new LutemonManager(this, adapter);
 
-        //Put the training lutemons to recyclerview
+
+        //Put the training lutemon to recyclerview
         recyclerView.setAdapter(adapter);
 
-        //Empty training
+        //Empty training (move lutemon back home)
         Button moveToHomeButton = findViewById(R.id.moveHomeButton);
         moveToHomeButton.setOnClickListener(v -> {
            trainingLutemonsList.clear();
            recyclerView.setAdapter(adapter);
         });
 
-
+        //Define UI elements
         ProgressBar progressBar = findViewById(R.id.progressBar);
         Button trainButton = findViewById(R.id.trainButton);
 
+        //Train button logic
         trainButton.setOnClickListener(v -> {
-            if (isLoading) return;
+            if (isLoading) return; //If already loading return
 
-            TrainingArea.train();
+            TrainingArea.train(); //Call train method
             isLoading = true;
             trainButton.setEnabled(false);
             progressBar.setProgress(0);
-
+            //Define countdown
             CountDownTimer countDownTimer = new CountDownTimer(6000, 60) {
-                @Override
+                @Override//Method for one tick
                 public void onTick(long millisUntilFinished) {
                     int progress = (int) ((6000 - millisUntilFinished) / 60);
                     progressBar.setProgress(progress);
                 }
 
-                @Override
+                @SuppressLint("UnsafeIntentLaunch")
+                @Override //Method for when the progress bar finishes
                 public void onFinish() {
                     progressBar.setProgress(100);
                     trainButton.setEnabled(true);
@@ -92,10 +94,7 @@ public class TrainingActivity extends AppCompatActivity {
                     startActivity(getIntent());
                 }
             };
-
-            countDownTimer.start();
+            countDownTimer.start(); //Start the countdown timer
         });
-
     }
-
 }
