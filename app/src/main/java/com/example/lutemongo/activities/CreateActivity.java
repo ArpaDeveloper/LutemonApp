@@ -17,7 +17,6 @@ import com.google.android.material.textfield.TextInputLayout;
  * CreateActivity handles create ui actions
  */
 public class CreateActivity extends AppCompatActivity {
-    // Variables
     private TextInputEditText nameInput;
     private RadioGroup colorGroup;
     private CreateLutemon createLutemon;

@@ -104,7 +104,4 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
             Log.e("LutemonViewHolder", "CheckBox not found in layout!");
         }
     }
-
-
 }
-

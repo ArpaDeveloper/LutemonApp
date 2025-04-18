@@ -8,7 +8,7 @@ import com.example.lutemongo.lutemonhandling.Lutemon;
 import com.example.lutemongo.lutemonhandling.Storage;
 
 public class BattleSystem {
-    private Context context;
+    private final Context context;
 
     public BattleSystem(Context context) {
         this.context = context;

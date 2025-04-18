@@ -15,7 +15,7 @@ public class TrainingArea {
         Storage storage = Storage.getInstance();
         Lutemon trainingLutemon = storage.getTrainingLutemon();
 
-        // After every 5 exp gain 1atk,1def,1hp and 1exp
+        // After every 5 exp gain 1 atk, 1 def, 1 hp and 1 exp
         if(trainingLutemon.getExperience() % 5 == 0 && trainingLutemon.getExperience() != 0){
             trainingLutemon.setAttack(trainingLutemon.getAttack()+1);
             trainingLutemon.setDefence(trainingLutemon.getDefence()+1);

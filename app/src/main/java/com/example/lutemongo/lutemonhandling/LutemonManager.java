@@ -12,14 +12,12 @@ import java.util.List;
 public class LutemonManager {
 
 
-    private LutemonAdapter adapter;
     Storage storage;
-    private Context context;
+    private final Context context;
 
     // Add a constructor to initialize the fields
     public LutemonManager(Context context, LutemonAdapter adapter) {
         this.context = context;
-        this.adapter = adapter;
         this.storage = Storage.getInstance();
     }
 

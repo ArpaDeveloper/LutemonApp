@@ -70,5 +70,4 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
         }
         return selected;
     }
-
 }

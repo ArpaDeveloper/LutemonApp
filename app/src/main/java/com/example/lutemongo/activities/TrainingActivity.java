@@ -24,7 +24,6 @@ import java.util.List;
  * TrainingActivity handles training ui actions
  */
 public class TrainingActivity extends AppCompatActivity {
-
     private boolean isLoading = false;
 
     @Override
