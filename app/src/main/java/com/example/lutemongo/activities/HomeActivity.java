@@ -21,7 +21,6 @@ import java.util.List;
 public class HomeActivity extends AppCompatActivity {
 
     private LutemonManager lutemonManager;
-    private LutemonAdapter adapter;
     private List<Lutemon> lutemons;
 
     @Override
@@ -43,7 +42,7 @@ public class HomeActivity extends AppCompatActivity {
         loader.loadLutemonData();
 
         // Initialize the adapter with lutemons and set to class field
-        this.adapter = new LutemonAdapter(lutemons, null,R.layout.item_layout_home);
+        LutemonAdapter adapter = new LutemonAdapter(lutemons, null, R.layout.item_layout_home);
 
         // Initialize the lutemonManager with the adapter
         lutemonManager = new LutemonManager(this, adapter);
