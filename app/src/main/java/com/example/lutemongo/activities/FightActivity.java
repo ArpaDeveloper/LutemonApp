@@ -14,7 +14,7 @@ import com.example.lutemongo.ui.UIHandler;
 
 public class FightActivity extends AppCompatActivity {
 
-    BattleSystem battleSystem = new BattleSystem();
+    BattleSystem battleSystem = new BattleSystem(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

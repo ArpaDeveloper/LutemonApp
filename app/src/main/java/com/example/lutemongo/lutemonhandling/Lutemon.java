@@ -75,7 +75,7 @@ public class Lutemon {
     }
 
     public void setHealth(int health){
-        this.health = max_health;
+        this.health = health;
     }
 
     public void setMaxHealth(int max_health){

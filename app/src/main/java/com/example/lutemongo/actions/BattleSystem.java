@@ -1,5 +1,6 @@
 package com.example.lutemongo.actions;
 
+import android.content.Context;
 import android.util.Log;
 import android.util.Pair;
 
@@ -7,6 +8,11 @@ import com.example.lutemongo.lutemonhandling.Lutemon;
 import com.example.lutemongo.lutemonhandling.Storage;
 
 public class BattleSystem {
+    private Context context;
+
+    public BattleSystem(Context context) {
+        this.context = context;
+    }
 
     /**
      * Simulates a battle between two Lutemons.
@@ -22,6 +28,13 @@ public class BattleSystem {
         // Reset health to max at start of battle
         teamLutemon.setHealth(teamLutemon.getMaxHealth());
         enemyLutemon.setHealth(enemyLutemon.getMaxHealth());
+
+        Log.d("BattleSystem", "Before battle - Team: " + teamLutemon.getName() +
+                " HP:" + teamLutemon.getHealth() + "/" + teamLutemon.getMaxHealth() +
+                " ATK:" + teamLutemon.getAttack() + " DEF:" + teamLutemon.getDefence());
+        Log.d("BattleSystem", "Before battle - Enemy: " + enemyLutemon.getName() +
+                " HP:" + enemyLutemon.getHealth() + "/" + enemyLutemon.getMaxHealth() +
+                " ATK:" + enemyLutemon.getAttack() + " DEF:" + enemyLutemon.getDefence());
 
         StringBuilder battleLog = new StringBuilder();
         battleLog.append("Battle Start!\n");
@@ -83,6 +96,17 @@ public class BattleSystem {
             } else {
                 battleLog.append(enemyLutemon.getName()).append(" wins the battle!\n");
             }
+        }
+
+        // Reset health for next time
+        teamLutemon.setHealth(teamLutemon.getMaxHealth());
+        enemyLutemon.setHealth(enemyLutemon.getMaxHealth());
+
+        // Save changes to storage
+        if (context != null) {
+            Storage.getInstance().saveToSharedPreferences(context);
+        } else {
+            Log.e("BattleSystem", "Context is null, cannot save battle results");
         }
 
         return battleLog.toString();
