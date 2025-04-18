@@ -21,16 +21,16 @@ public class StatisticsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_statistics);
 
-        //Initialize the UIHandler
+        // Initialize the UIHandler
         UIHandler uiHandler = new UIHandler(this);
 
-        //Set up button listeners for StatisticsActivity
+        // Set up button listeners for StatisticsActivity
         uiHandler.setupStatisticsActivityButtons(this);
 
-        //Setup the RecyclerView for Stats
+        // Setup the RecyclerView for Stats
         RecyclerView recyclerView = RecyclerViewUtil.setupRecyclerView(this, R.id.RecyclerViewStats);
 
-        //Load the data from file
+        // Load the data from file
         LoadLutemonsFromFile loader = new LoadLutemonsFromFile(recyclerView, R.layout.item_layout_stats);
         loader.loadLutemonData();
     }

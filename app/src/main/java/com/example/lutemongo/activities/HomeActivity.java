@@ -38,7 +38,7 @@ public class HomeActivity extends AppCompatActivity {
         // Setup the RecyclerView for Home
         RecyclerView recyclerView = RecyclerViewUtil.setupRecyclerView(this, R.id.RecyclerViewHome);
 
-        //Load lutemons from file
+        // Load lutemons from file
         LoadLutemonsFromFile loader = new LoadLutemonsFromFile(recyclerView, R.layout.item_layout_home);
         loader.loadLutemonData();
 

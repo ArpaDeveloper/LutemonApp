@@ -26,7 +26,7 @@ public class FightActivity extends AppCompatActivity {
         // Setup buttons for this activity
         uiHandler.setupFightActivityButtons(this);
 
-        //Initialize Storage
+        // Initialize Storage
         Storage storage = Storage.getInstance();
 
         Button FightButton = findViewById(R.id.nextAttackButton);

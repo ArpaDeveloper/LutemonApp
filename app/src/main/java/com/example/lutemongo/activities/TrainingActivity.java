@@ -32,60 +32,60 @@ public class TrainingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
 
-        //Initialize the UIHandler
+        // Initialize the UIHandler
         UIHandler uiHandler = new UIHandler(this);
 
-        //Set up button listeners for TrainingActivity
+        // Set up button listeners for TrainingActivity
         uiHandler.setupTrainingActivityButtons(this);
 
-        //Setup the RecyclerView for Training
+        // Setup the RecyclerView for Training
         RecyclerView recyclerView = RecyclerViewUtil.setupRecyclerView(this, R.id.RecyclerViewTraining);
 
-        //Initialize Storage
+        // Initialize Storage
         Storage storage = Storage.getInstance();
 
-        //List for the training lutemon
+        // List for the training lutemon
         List<Lutemon> trainingLutemonsList = new ArrayList<>();
         Lutemon trainingLutemon = storage.getTrainingLutemon();
         trainingLutemonsList.add(trainingLutemon);
 
-        //Initialize adapter
+        // Initialize adapter
         LutemonAdapter adapter = new LutemonAdapter(trainingLutemonsList, lutemon -> {
         }, R.layout.item_layout_home);
 
 
-        //Put the training lutemon to recyclerview
+        // Put the training lutemon to recyclerview
         recyclerView.setAdapter(adapter);
 
-        //Empty training (move lutemon back home)
+        // Empty training (move lutemon back home)
         Button moveToHomeButton = findViewById(R.id.moveHomeButton);
         moveToHomeButton.setOnClickListener(v -> {
            trainingLutemonsList.clear();
            recyclerView.setAdapter(adapter);
         });
 
-        //Define UI elements
+        // Define UI elements
         ProgressBar progressBar = findViewById(R.id.progressBar);
         Button trainButton = findViewById(R.id.trainButton);
 
-        //Train button logic
+        // Train button logic
         trainButton.setOnClickListener(v -> {
-            if (isLoading) return; //If already loading return
+            if (isLoading) return; // If already loading return
 
-            TrainingArea.train(); //Call train method
+            TrainingArea.train(); // Call train method
             isLoading = true;
             trainButton.setEnabled(false);
             progressBar.setProgress(0);
-            //Define countdown
+            // Define countdown
             CountDownTimer countDownTimer = new CountDownTimer(6000, 60) {
-                @Override//Method for one tick
+                @Override // Method for one tick
                 public void onTick(long millisUntilFinished) {
                     int progress = (int) ((6000 - millisUntilFinished) / 60);
                     progressBar.setProgress(progress);
                 }
 
                 @SuppressLint("UnsafeIntentLaunch")
-                @Override //Method for when the progress bar finishes
+                @Override // Method for when the progress bar finishes
                 public void onFinish() {
                     progressBar.setProgress(100);
                     trainButton.setEnabled(true);
@@ -94,7 +94,7 @@ public class TrainingActivity extends AppCompatActivity {
                     startActivity(getIntent());
                 }
             };
-            countDownTimer.start(); //Start the countdown timer
+            countDownTimer.start(); // Start the countdown timer
         });
     }
 }

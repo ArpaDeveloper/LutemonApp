@@ -11,20 +11,19 @@ public class TrainingArea {
      * Handles Lutemon training and how stats are gained
      */
     public static void train() {
-        //Initialize Storage & fetch trainingLutemon
+        // Initialize Storage & fetch trainingLutemon
         Storage storage = Storage.getInstance();
         Lutemon trainingLutemon = storage.getTrainingLutemon();
 
-        //After every 5 exp gain 1atk,1def,1hp and 1exp
+        // After every 5 exp gain 1atk,1def,1hp and 1exp
         if(trainingLutemon.getExperience() % 5 == 0 && trainingLutemon.getExperience() != 0){
             trainingLutemon.setAttack(trainingLutemon.getAttack()+1);
             trainingLutemon.setDefence(trainingLutemon.getDefence()+1);
             trainingLutemon.setMaxHealth(trainingLutemon.getMaxHealth()+1);
             trainingLutemon.setExperience(trainingLutemon.getExperience()+1);
         }
-        else{//Else add 1exp
+        else{// Else add 1exp
             trainingLutemon.setExperience(trainingLutemon.getExperience()+1);
         }
     }
-
 }
