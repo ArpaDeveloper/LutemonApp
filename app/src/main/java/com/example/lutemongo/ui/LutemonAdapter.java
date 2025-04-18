@@ -10,8 +10,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lutemongo.Lutemon;
-import com.example.lutemongo.Storage;
+import com.example.lutemongo.lutemonhandling.Lutemon;
 
 //This class handles the lutemons in the recyclerview
 public class LutemonAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
@@ -43,7 +42,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
         return new LutemonViewHolder(view, listener, layoutResId);
     }
 
-    //This method gets the Movies position and binds it to right place
+    //This method gets the Lutemons position and binds it to right place
     @Override
     public void onBindViewHolder(@NonNull LutemonViewHolder holder, int position){
         Lutemon lutemon = lutemons.get(position);

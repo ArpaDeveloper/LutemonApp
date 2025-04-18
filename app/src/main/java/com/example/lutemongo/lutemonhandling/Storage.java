@@ -1,4 +1,4 @@
-package com.example.lutemongo;
+package com.example.lutemongo.lutemonhandling;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,6 +14,7 @@ import java.util.List;
 public class Storage {
     private List<Lutemon> lutemons;
     private Lutemon activeTeamLutemon;
+    private Lutemon activeTrainingLutemon;
     private static Storage instance;
     private static final String PREF_NAME = "lutemon_storage";
     private static final String KEY_LUTEMONS = "lutemons";
@@ -23,6 +24,7 @@ public class Storage {
     private Storage() {
         lutemons = new ArrayList<>();
         activeTeamLutemon = null;
+        activeTrainingLutemon = null;
     }
 
     // Singleton implementation
@@ -82,11 +84,47 @@ public class Storage {
     }
 
     /**
+     * Set the active Lutemon for the training (only 1 allowed)
+     * @param lutemon Lutemon to add to training
+     * @return boolean indicating success
+     */
+    public boolean setTrainingLutemon(Lutemon lutemon) {
+        if (lutemon == null) {
+            return false;
+        }
+
+        // Verify the Lutemon exists in storage
+        boolean exists = false;
+        for (Lutemon storedLutemon : lutemons) {
+            if (storedLutemon == lutemon) {
+                exists = true;
+                break;
+            }
+        }
+
+        if (!exists) {
+            return false;
+        }
+
+        activeTrainingLutemon = lutemon;
+        return true;
+    }
+
+
+    /**
      * Get active team Lutemon
      * @return Current active Lutemon
      */
     public Lutemon getTeamLutemon() {
         return activeTeamLutemon;
+    }
+
+    /**
+     * Get active training Lutemon
+     * @return Current active Lutemon
+     */
+    public Lutemon getTrainingLutemon() {
+        return activeTrainingLutemon;
     }
 
     /**
@@ -131,6 +169,7 @@ public class Storage {
     public void clearAll() {
         lutemons.clear();
         activeTeamLutemon = null;
+        activeTrainingLutemon = null;
     }
 
     /**

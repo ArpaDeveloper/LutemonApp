@@ -1,13 +1,9 @@
 package com.example.lutemongo.filehandling;
 
-import android.content.Context;
-import android.util.Log;
-
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lutemongo.Lutemon;
-import com.example.lutemongo.R;
-import com.example.lutemongo.Storage;
+import com.example.lutemongo.lutemonhandling.Lutemon;
+import com.example.lutemongo.lutemonhandling.Storage;
 import com.example.lutemongo.ui.LutemonAdapter;
 
 import java.util.List;

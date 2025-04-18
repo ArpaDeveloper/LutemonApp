@@ -5,8 +5,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-import com.example.lutemongo.Lutemon;
-import com.example.lutemongo.Storage;
+import com.example.lutemongo.lutemonhandling.Lutemon;
+import com.example.lutemongo.lutemonhandling.Storage;
 import com.google.android.material.textfield.TextInputEditText;
 
 public class CreateLutemon {
@@ -90,28 +90,28 @@ public class CreateLutemon {
         // Set attributes based on color
         switch (color) {
             case "red":
-                attack = 5;
-                maxHealth = 25;
+                attack = 20;
+                maxHealth = 5;
                 defense = 5;
                 break;
             case "blue":
                 attack = 5;
-                maxHealth = 25;
+                maxHealth = 20;
                 defense = 5;
                 break;
             case "green":
                 attack = 5;
-                maxHealth = 25;
-                defense = 5;
+                maxHealth = 5;
+                defense = 20;
                 break;
             case "yellow":
-                attack = 5;
-                maxHealth = 25;
-                defense = 5;
+                attack = 10;
+                maxHealth = 10;
+                defense = 10;
                 break;
             case "lila":
-                attack = 5;
-                maxHealth = 25;
+                attack = 10;
+                maxHealth = 15;
                 defense = 5;
                 break;
             default:

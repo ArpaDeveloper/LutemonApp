@@ -9,8 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.example.lutemongo.Lutemon;
-import com.example.lutemongo.actions.MoveLutemons;
+import com.example.lutemongo.lutemonhandling.Lutemon;
 import com.example.lutemongo.activities.MainActivity;
 import com.example.lutemongo.R;
 import com.example.lutemongo.activities.CreateActivity;
@@ -209,7 +208,8 @@ public class UIHandler {
         }
 
         if (trainButton != null) {
-            trainButton.setOnClickListener(v -> goToTrainingScreen());
+          //  trainButton.setOnClickListener(v -> goToTrainingScreen());
+
         }
 
         if (mainButton != null) {

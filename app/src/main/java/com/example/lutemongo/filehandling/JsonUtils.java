@@ -4,7 +4,7 @@ package com.example.lutemongo.filehandling;
 import android.content.Context;
 import android.util.Log;
 
-import com.example.lutemongo.Lutemon;
+import com.example.lutemongo.lutemonhandling.Lutemon;
 import com.example.lutemongo.ui.ErrorHandler;
 
 import org.json.JSONArray;

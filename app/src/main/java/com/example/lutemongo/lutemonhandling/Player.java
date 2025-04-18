@@ -1,4 +1,4 @@
-package com.example.lutemongo;
+package com.example.lutemongo.lutemonhandling;
 
 public class Player {
     public String name;

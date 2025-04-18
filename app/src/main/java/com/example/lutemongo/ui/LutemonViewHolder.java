@@ -1,6 +1,7 @@
 package com.example.lutemongo.ui;
 
 //Imports
+import android.annotation.SuppressLint;
 import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
@@ -10,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lutemongo.Lutemon;
+import com.example.lutemongo.lutemonhandling.Lutemon;
 import com.example.lutemongo.R;
 
 
@@ -68,17 +69,18 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
     }
 
     //Binds the movies data to the ui
+    @SuppressLint("SetTextI18n")
     public void bind(Lutemon lutemon, int layoutResId) {
 
         nameTextView.setText(lutemon.getName());
         colorTextView.setText(lutemon.getColor());
         if (layoutResId == R.layout.item_layout_home) {
             //Convert int to String for experience, attack, health, max health, and defence
-            expTextView.setText(String.valueOf(lutemon.getExperience()));
-            atkTextView.setText(String.valueOf(lutemon.getAttack()));
-            hpTextView.setText(String.valueOf(lutemon.getHealth()));
-            maxhpTextView.setText(String.valueOf(lutemon.getMaxHealth()));
-            defenceTextView.setText(String.valueOf(lutemon.getDefence()));
+            expTextView.setText(lutemon.getExperience()+" exp");
+            atkTextView.setText(lutemon.getAttack()+" atk");
+            hpTextView.setText(lutemon.getHealth()+"/");
+            maxhpTextView.setText(lutemon.getMaxHealth()+" hp");
+            defenceTextView.setText(lutemon.getDefence()+" def");
         }
         else if(layoutResId == R.layout.item_layout_stats) {
             //Convert int to String for battles,wins,training
@@ -90,7 +92,7 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
 
         String imageName = lutemon.getColor();
 
-        int imageResId = itemView.getContext().getResources()
+        @SuppressLint("DiscouragedApi") int imageResId = itemView.getContext().getResources()
                 .getIdentifier(imageName, "drawable", itemView.getContext().getPackageName());
 
         lutemonImageView.setImageResource(imageResId);
