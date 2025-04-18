@@ -19,24 +19,34 @@ public class BattleSystem {
             return "Both Lutemons must be selected for the battle.";
         }
 
-        // Store original health values
-        int originalTeamHealth = teamLutemon.getHealth();
-        int originalEnemyHealth = enemyLutemon.getHealth();
+        // Reset health to max at start of battle
+        teamLutemon.setHealth(teamLutemon.getMaxHealth());
+        enemyLutemon.setHealth(enemyLutemon.getMaxHealth());
 
         StringBuilder battleLog = new StringBuilder();
         battleLog.append("Battle Start!\n");
 
+        // Counter to prevent infinite loops
+        int maxTurns = 100;
+        int turnCount = 0;
+
         // Simulate turns
-        while (teamLutemon.getHealth() > 0 && enemyLutemon.getHealth() > 0) {
+        while (teamLutemon.getHealth() > 0 && enemyLutemon.getHealth() > 0 && turnCount < maxTurns) {
+            turnCount++;
+
             // Team Lutemon attacks
-            int damageToEnemy = Math.max(0, teamLutemon.getAttack() - enemyLutemon.getDefence());
+            int damageToEnemy = Math.max(1, teamLutemon.getAttack() - enemyLutemon.getDefence());
             enemyLutemon.setHealth(enemyLutemon.getHealth() - damageToEnemy);
             battleLog.append(teamLutemon.getName())
                     .append(" attacks ")
                     .append(enemyLutemon.getName())
                     .append(" for ")
                     .append(damageToEnemy)
-                    .append(" damage.\n");
+                    .append(" damage. ")
+                    .append(enemyLutemon.getName())
+                    .append(" HP: ")
+                    .append(enemyLutemon.getHealth())
+                    .append("\n");
 
             if (enemyLutemon.getHealth() <= 0) {
                 battleLog.append(enemyLutemon.getName()).append(" has been defeated!\n");
@@ -44,14 +54,18 @@ public class BattleSystem {
             }
 
             // Enemy Lutemon attacks
-            int damageToTeam = Math.max(0, enemyLutemon.getAttack() - teamLutemon.getDefence());
+            int damageToTeam = Math.max(1, enemyLutemon.getAttack() - teamLutemon.getDefence());
             teamLutemon.setHealth(teamLutemon.getHealth() - damageToTeam);
             battleLog.append(enemyLutemon.getName())
                     .append(" attacks ")
                     .append(teamLutemon.getName())
                     .append(" for ")
                     .append(damageToTeam)
-                    .append(" damage.\n");
+                    .append(" damage. ")
+                    .append(teamLutemon.getName())
+                    .append(" HP: ")
+                    .append(teamLutemon.getHealth())
+                    .append("\n");
 
             if (teamLutemon.getHealth() <= 0) {
                 battleLog.append(teamLutemon.getName()).append(" has been defeated!\n");
@@ -59,17 +73,17 @@ public class BattleSystem {
             }
         }
 
-        // Determine winner
-        if (teamLutemon.getHealth() > 0) {
-            battleLog.append(teamLutemon.getName()).append(" wins the battle!\n");
-            teamLutemon.setExperience(teamLutemon.getExperience() + 10);
+        if (turnCount >= maxTurns) {
+            battleLog.append("Battle ended in a draw after ").append(maxTurns).append(" turns!\n");
         } else {
-            battleLog.append(enemyLutemon.getName()).append(" wins the battle!\n");
+            // Determine winner
+            if (teamLutemon.getHealth() > 0) {
+                battleLog.append(teamLutemon.getName()).append(" wins the battle!\n");
+                teamLutemon.setExperience(teamLutemon.getExperience() + 10);
+            } else {
+                battleLog.append(enemyLutemon.getName()).append(" wins the battle!\n");
+            }
         }
-
-        // Restore original health values
-        teamLutemon.setHealth(originalTeamHealth);
-        enemyLutemon.setHealth(originalEnemyHealth);
 
         return battleLog.toString();
     }
