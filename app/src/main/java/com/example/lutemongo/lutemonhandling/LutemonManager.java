@@ -70,5 +70,4 @@ public class LutemonManager {
             storage.setEnemyLutemon(enemyLutemon);
         }
     }
-
 }
