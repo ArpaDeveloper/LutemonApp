@@ -25,7 +25,6 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
     private final TextView colorTextView;
     private TextView expTextView;
     private TextView atkTextView;
-    private TextView hpTextView;
     private TextView maxhpTextView;
     private TextView defenceTextView;
     private TextView battlesTextView;
