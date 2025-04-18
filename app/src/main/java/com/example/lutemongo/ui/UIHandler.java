@@ -203,13 +203,6 @@ public class UIHandler {
         Button trainButton = activity.findViewById(R.id.moveTrainButton);
         Button mainButton = activity.findViewById(R.id.main_button);
 
-        if (fightButton != null) {
-            fightButton.setOnClickListener(v -> goToFightScreen());
-        }
-
-        //if (trainButton != null) {
-            //trainButton.setOnClickListener(v -> goToTrainingScreen());
-       // } ALA KAYTA
 
         if (mainButton != null) {
             mainButton.setOnClickListener(v -> goToMainScreen());
