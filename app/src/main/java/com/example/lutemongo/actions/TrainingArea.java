@@ -22,7 +22,8 @@ public class TrainingArea {
             trainingLutemon.setMaxHealth(trainingLutemon.getMaxHealth()+1);
             trainingLutemon.setExperience(trainingLutemon.getExperience()+1);
         }
-        else{// Else add 1exp
+        // Else add 1 exp
+        else{
             trainingLutemon.setExperience(trainingLutemon.getExperience()+1);
         }
     }
