@@ -18,6 +18,7 @@ public class Lutemon {
         this.color = color;
         this.attack = attack;
         this.max_health = max_health;
+        this.health = health;
         this.defence = defence;
         this.experience = experience;
     }
