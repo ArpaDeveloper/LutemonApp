@@ -31,7 +31,7 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
     private TextView winsTextView;
     private TextView trainingTextView;
 
-    private final CheckBox lutemonCheckbox;
+    private CheckBox lutemonCheckbox = null;
 
     //Constructor
     public LutemonViewHolder(@NonNull View itemView, final LutemonAdapter.OnItemClickListener listener, int layoutResId) {
@@ -48,6 +48,7 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
             maxhpTextView = itemView.findViewById(R.id.lutemonMaxHpText);
             hpTextView = itemView.findViewById(R.id.lutemonHpText);
             defenceTextView = itemView.findViewById(R.id.lutemonDefText);
+            lutemonCheckbox = itemView.findViewById(R.id.lutemonCheckBox);
         }//Stats layout texts
         else if(layoutResId == R.layout.item_layout_stats){
             battlesTextView = itemView.findViewById(R.id.battlesNumberText);
@@ -64,7 +65,6 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
-        lutemonCheckbox = itemView.findViewById(R.id.lutemonCheckBox);
     }
 
     //Binds the movies data to the ui

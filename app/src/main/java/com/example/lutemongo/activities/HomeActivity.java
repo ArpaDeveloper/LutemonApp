@@ -4,21 +4,16 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.lutemongo.Lutemon;
 import com.example.lutemongo.R;
-import com.example.lutemongo.Storage;
 import com.example.lutemongo.filehandling.LoadLutemonsFromFile;
-import com.example.lutemongo.ui.LutemonAdapter;
 import com.example.lutemongo.ui.RecyclerViewUtil;
 import com.example.lutemongo.ui.UIHandler;
 
-import java.util.List;
+
 
 public class HomeActivity extends AppCompatActivity {
 
-    private LutemonAdapter adapter;
-    private List<Lutemon> lutemons;
-    private Storage storage;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
         RecyclerView recyclerView = RecyclerViewUtil.setupRecyclerView(this, R.id.RecyclerViewHome);
 
         //Load lutemons from file
-        LoadLutemonsFromFile loader = new LoadLutemonsFromFile(recyclerView, R.layout.item_layout_stats);
+        LoadLutemonsFromFile loader = new LoadLutemonsFromFile(recyclerView, R.layout.item_layout_home);
         loader.loadLutemonData();
     }
 }
