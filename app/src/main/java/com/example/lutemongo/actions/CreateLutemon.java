@@ -9,6 +9,8 @@ import com.example.lutemongo.lutemonhandling.Lutemon;
 import com.example.lutemongo.lutemonhandling.Storage;
 import com.google.android.material.textfield.TextInputEditText;
 
+import java.util.Objects;
+
 public class CreateLutemon {
     private final Context context;
     private Storage storage;
@@ -31,7 +33,7 @@ public class CreateLutemon {
         }
 
         // Get the name from input
-        String name = nameInput.getText().toString().trim();
+        String name = Objects.requireNonNull(nameInput.getText()).toString().trim();
 
         // Validate name
         if (name.isEmpty()) {
