@@ -56,5 +56,15 @@ public class HomeActivity extends AppCompatActivity {
                 Log.e("HomeActivity", "LutemonManager is not initialized.");
             }
         });
+
+        Button moveToFightButton = findViewById(R.id.moveFightButton);
+        moveToFightButton.setOnClickListener(v -> {
+            if (lutemonManager != null) {
+                lutemonManager.moveSelectedLutemonsToFight(); // Safely call the method
+            } else {
+                // Handle the case where LutemonManager is still null
+                Log.e("HomeActivity", "LutemonManager is not initialized.");
+            }
+        });
     }
 }
