@@ -102,16 +102,21 @@ public class BattleSystem {
             // Determine winner
             if (teamLutemon.getHealth() > 0) {
                 battleLog.append(teamLutemon.getName()).append(" wins the battle!\n");
+                teamLutemon.setWins(enemyLutemon.getWins() + 1);
                 // teamLutemon.setExperience(teamLutemon.getExperience() + 10);
                 // battleLog.append(teamLutemon.getName()).append(" gained 10 experience points!\n");
             } else {
                 battleLog.append(enemyLutemon.getName()).append(" wins the battle!\n");
+                enemyLutemon.setWins(enemyLutemon.getWins() + 1);
             }
         }
 
         // Reset health for next time
         teamLutemon.setHealth(teamLutemon.getMaxHealth());
         enemyLutemon.setHealth(enemyLutemon.getMaxHealth());
+
+        teamLutemon.setBattls(teamLutemon.getBattles() + 1);
+        enemyLutemon.setBattls(teamLutemon.getBattles() + 1);
 
         // Save changes to storage
         if (context != null) {
