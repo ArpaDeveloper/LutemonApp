@@ -73,7 +73,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RecyclerViewTraining"
         android:layout_width="409dp"
-        android:layout_height="306dp"
+        android:layout_height="200dp"
         android:layout_marginStart="1dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="1dp"
@@ -91,5 +91,15 @@
         android:layout_marginBottom="24dp"
         app:layout_constraintBottom_toTopOf="@+id/moveHomeButton"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="161dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/training" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

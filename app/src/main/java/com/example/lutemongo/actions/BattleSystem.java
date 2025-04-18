@@ -1,5 +1,6 @@
 package com.example.lutemongo.actions;
 
+import android.util.Log;
 import android.util.Pair;
 
 import com.example.lutemongo.lutemonhandling.Lutemon;
