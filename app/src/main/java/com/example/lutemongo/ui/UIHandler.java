@@ -30,7 +30,7 @@ public class UIHandler {
     }
 
     /**
-     * Navigate to the main screen
+     * Navigate to the main screen of the application.
      */
     public void goToMainScreen() {
         Intent intent = new Intent(context, MainActivity.class);
@@ -78,7 +78,9 @@ public class UIHandler {
     }
 
     /**
-     * Set up button listeners for the main activity
+     * Set up button listeners for the main activity.
+     *
+     * @param activity The activity whose buttons are being configured.
      */
     public void setupMainActivityButtons(@NonNull Activity activity) {
         Button createButton = activity.findViewById(R.id.go_create_button);
@@ -95,7 +97,9 @@ public class UIHandler {
     }
 
     /**
-     * Set up button listeners for the fight activity
+     * Set up button listeners for the fight activity.
+     *
+     * @param activity The activity whose buttons are being configured.
      */
     public void setupFightActivityButtons(@NonNull Activity activity) {
         Button nextAttackButton = activity.findViewById(R.id.nextAttackButton);
@@ -104,7 +108,6 @@ public class UIHandler {
 
         if (nextAttackButton != null) {
             nextAttackButton.setOnClickListener(v -> {
-                // TODO: Battle logic
             });
         }
 
@@ -118,7 +121,9 @@ public class UIHandler {
     }
 
     /**
-     * Set up button listeners for the training activity
+     * Set up button listeners for the training activity.
+     *
+     * @param activity The activity whose buttons are being configured.
      */
     public void setupTrainingActivityButtons(@NonNull Activity activity) {
         Button homeButton = activity.findViewById(R.id.moveHomeButton);
@@ -130,7 +135,9 @@ public class UIHandler {
     }
 
     /**
-     * Set up button listeners for the create activity
+     * Set up button listeners for the create activity.
+     *
+     * @param activity The activity whose buttons are being configured.
      */
     public void setupCreateActivityButtons(@NonNull Activity activity) {
         Button createButton = activity.findViewById(R.id.create_button);
@@ -140,7 +147,9 @@ public class UIHandler {
     }
 
     /**
-     * Set up button listeners for the statistics activity
+     * Set up button listeners for the statistics activity.
+     *
+     * @param activity The activity whose buttons are being configured.
      */
     public void setupStatisticsActivityButtons(@NonNull Activity activity) {
         Button viewChartsButton = activity.findViewById(R.id.view_charts_button);
@@ -150,9 +159,10 @@ public class UIHandler {
     }
 
     /**
-     * Display battle results on the screen
-     * @param result The battle result message
-     * @param resultView TextView where you want the result to display
+     * Display the battle result message on the specified TextView.
+     *
+     * @param result The battle result message to display.
+     * @param resultView The TextView where the result will be displayed. Can be null.
      */
     public void printResults(@NonNull String result, @Nullable TextView resultView) {
         if (resultView != null) {
@@ -162,12 +172,13 @@ public class UIHandler {
     }
 
     /**
-     * Updates Lutemon information on the UI
-     * @param lutemon The Lutemon object
-     * @param nameView TextView for the name
-     * @param attackView TextView for attack value
-     * @param defenceView TextView for defence value
-     * @param healthView TextView for health value
+     * Update the UI with the Lutemon's information.
+     *
+     * @param lutemon The Lutemon object containing the data.
+     * @param nameView TextView to display the Lutemon's name.
+     * @param attackView TextView to display the Lutemon's attack value.
+     * @param defenceView TextView to display the Lutemon's defence value.
+     * @param healthView TextView to display the Lutemon's health value.
      */
     public void updateLutemonInfo(Lutemon lutemon, TextView nameView, TextView attackView,
                                   TextView defenceView, TextView healthView) {
@@ -188,15 +199,18 @@ public class UIHandler {
     }
 
     /**
-     * Finish the current activity
-     * @param activity The activity you want to finish
+     * Finish and close the specified activity.
+     *
+     * @param activity The activity to be finished.
      */
     public void closeActivity(@NonNull Activity activity) {
         activity.finish();
     }
 
     /**
-     * Set up button listeners for the home activity
+     * Set up button listeners for the home activity.
+     *
+     * @param activity The activity whose buttons are being configured.
      */
     public void setupHomeActivityButtons(@NonNull Activity activity) {
         Button fightButton = activity.findViewById(R.id.moveFightButton);
