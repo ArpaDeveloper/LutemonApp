@@ -42,10 +42,11 @@ public class HomeActivity extends AppCompatActivity {
         LoadLutemonsFromFile loader = new LoadLutemonsFromFile(recyclerView, R.layout.item_layout_home);
         loader.loadLutemonData();
 
+        // Initialize the adapter with lutemons and set to class field
+        this.adapter = new LutemonAdapter(lutemons, null,R.layout.item_layout_home);
 
-        LutemonAdapter adapter = new LutemonAdapter(lutemons, null,R.layout.item_layout_home);
+        // Initialize the lutemonManager with the adapter
         lutemonManager = new LutemonManager(this, adapter);
-
         Button moveToTrainingButton = findViewById(R.id.moveTrainButton);
         moveToTrainingButton.setOnClickListener(v -> {
             if (lutemonManager != null) {
