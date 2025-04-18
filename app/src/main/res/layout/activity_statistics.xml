@@ -61,21 +61,6 @@
 
     <!--View Charts Button-->
 
-    <Button
-        android:id="@+id/view_charts_button"
-        android:layout_width="250dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="80dp"
-        android:layout_marginEnd="81dp"
-        android:layout_marginBottom="5dp"
-        android:text="@string/view_charts"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        app:backgroundTint="@color/red"
-        app:layout_constraintBottom_toTopOf="@+id/main_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
     <!--Main Button-->
     <Button
         android:id="@+id/main_button"
@@ -98,9 +83,9 @@
         android:layout_height="300dp"
         android:layout_marginStart="1dp"
         android:layout_marginEnd="1dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginBottom="56dp"
         android:contentDescription="@string/placeholder"
-        app:layout_constraintBottom_toTopOf="@+id/view_charts_button"
+        app:layout_constraintBottom_toTopOf="@+id/main_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 

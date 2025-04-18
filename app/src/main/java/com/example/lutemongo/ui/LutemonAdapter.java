@@ -48,7 +48,7 @@ public class LutemonAdapter extends RecyclerView.Adapter<LutemonViewHolder> {
         holder.bind(lutemon, layoutResId);
     }
 
-    // This method returns the amount of movies in the list
+    // This method returns the amount of lutemons in the list
     @Override
     public int getItemCount(){
         return lutemons != null ? lutemons.size() : 0;
