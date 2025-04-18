@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lutemongo.Lutemon;
+import com.example.lutemongo.Storage;
 
 //This class handles the lutemons in the recyclerview
 public class LutemonAdapter extends RecyclerView.Adapter<LutemonViewHolder> {

@@ -28,8 +28,8 @@ public class StatisticsActivity extends AppCompatActivity {
         //Setup the RecyclerView for Stats
         RecyclerView recyclerView = RecyclerViewUtil.setupRecyclerView(this, R.id.RecyclerViewStats);
 
-        //Load the data from Json
-        LoadLutemonsFromFile loader = new LoadLutemonsFromFile(this, recyclerView, R.layout.item_layout_stats);
+        //Load the data from file
+        LoadLutemonsFromFile loader = new LoadLutemonsFromFile(recyclerView, R.layout.item_layout_stats);
         loader.loadLutemonData();
     }
 

@@ -1,6 +1,7 @@
 package com.example.lutemongo.ui;
 
 //Imports
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.ImageView;
@@ -95,11 +96,15 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
         lutemonImageView.setImageResource(imageResId);
 
         // Handle checkbox state
-        lutemonCheckbox.setOnCheckedChangeListener(null); // prevent unwanted triggers
-        lutemonCheckbox.setChecked(lutemon.isSelected());
+        if (lutemonCheckbox != null) {
+            lutemonCheckbox.setOnCheckedChangeListener(null); // prevent unwanted triggers
+            lutemonCheckbox.setChecked(lutemon.isSelected());
 
-        lutemonCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> lutemon.setSelected(isChecked));
-
+            lutemonCheckbox.setOnCheckedChangeListener((buttonView, isChecked) -> lutemon.setSelected(isChecked));
+        } else {
+           // ErrorHandler.showError(this, "CheckBox not found in layout!");
+            Log.e("LutemonViewHolder", "CheckBox not found in layout!");
+        }
     }
 
 
