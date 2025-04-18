@@ -86,6 +86,8 @@ public class CreateLutemon {
         int attack;
         int maxHealth;
         int defense;
+        int battles;
+        int wins;
 
         // Set attributes based on color
         switch (color) {
@@ -93,36 +95,48 @@ public class CreateLutemon {
                 attack = 20;
                 maxHealth = 5;
                 defense = 5;
+                battles = 0;
+                wins = 0;
                 break;
             case "blue":
                 attack = 5;
                 maxHealth = 20;
                 defense = 5;
+                battles = 0;
+                wins = 0;
                 break;
             case "green":
                 attack = 5;
                 maxHealth = 5;
                 defense = 20;
+                battles = 0;
+                wins = 0;
                 break;
             case "yellow":
                 attack = 10;
                 maxHealth = 10;
                 defense = 10;
+                battles = 0;
+                wins = 0;
                 break;
             case "lila":
                 attack = 10;
                 maxHealth = 15;
                 defense = 5;
+                battles = 0;
+                wins = 0;
                 break;
             default:
                 attack = 1;
                 maxHealth = 1;
                 defense = 1;
+                battles = 0;
+                wins = 0;
                 break;
         }
 
         // Initialize Lutemon with full health equal to max health and 0 experience
-        return new Lutemon(name, color, attack, maxHealth, maxHealth, defense, 0);
+        return new Lutemon(name, color, attack, maxHealth, maxHealth, defense, 0, battles, wins);
     }
 
     /**

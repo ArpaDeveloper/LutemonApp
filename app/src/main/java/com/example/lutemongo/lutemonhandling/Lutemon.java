@@ -16,7 +16,7 @@ public class Lutemon {
 
 
     // Constructor
-    public Lutemon(String name, String  color, int attack,int health, int max_health, int defence, int experience){
+    public Lutemon(String name, String  color, int attack,int health, int max_health, int defence, int experience, int battles, int wins){
         this.name = name;
         this.color = color;
         this.attack = attack;
@@ -24,6 +24,8 @@ public class Lutemon {
         this.health = health;
         this.defence = defence;
         this.experience = experience;
+        this.battls = battles;
+        this.wins = wins;
     }
 
     // Used for the lutemon selection
