@@ -39,24 +39,16 @@ public class BattleSystem {
         StringBuilder battleLog = new StringBuilder();
         battleLog.append("Battle Start!\n");
 
-        int baseDamage;
-        int variance;
-        int damageToEnemy;
-        int damageToTeam;
-
         // Counter to prevent infinite loops
         int maxTurns = 100;
         int turnCount = 0;
-        java.util.Random random = new java.util.Random();
 
         // Simulate turns
         while (teamLutemon.getHealth() > 0 && enemyLutemon.getHealth() > 0 && turnCount < maxTurns) {
             turnCount++;
 
-            baseDamage = Math.max(1, teamLutemon.getAttack() - enemyLutemon.getDefence());
-            variance = random.nextInt(10) - 5; // -5 to +5
-            damageToEnemy = Math.max(1, baseDamage + variance);
-
+            // Team Lutemon attacks
+            int damageToEnemy = Math.max(1, teamLutemon.getAttack() - enemyLutemon.getDefence());
             enemyLutemon.setHealth(enemyLutemon.getHealth() - damageToEnemy);
             battleLog.append(teamLutemon.getName())
                     .append(" attacks ")
@@ -74,10 +66,8 @@ public class BattleSystem {
                 break;
             }
 
-            baseDamage = Math.max(1, enemyLutemon.getAttack() - teamLutemon.getDefence());
-            variance = random.nextInt(10) - 5; // -5 to +5
-            damageToTeam = Math.max(1, baseDamage + variance);
-
+            // Enemy Lutemon attacks
+            int damageToTeam = Math.max(1, enemyLutemon.getAttack() - teamLutemon.getDefence());
             teamLutemon.setHealth(teamLutemon.getHealth() - damageToTeam);
             battleLog.append(enemyLutemon.getName())
                     .append(" attacks ")
@@ -102,8 +92,7 @@ public class BattleSystem {
             // Determine winner
             if (teamLutemon.getHealth() > 0) {
                 battleLog.append(teamLutemon.getName()).append(" wins the battle!\n");
-                // teamLutemon.setExperience(teamLutemon.getExperience() + 10);
-                // battleLog.append(teamLutemon.getName()).append(" gained 10 experience points!\n");
+                teamLutemon.setExperience(teamLutemon.getExperience() + 10);
             } else {
                 battleLog.append(enemyLutemon.getName()).append(" wins the battle!\n");
             }
