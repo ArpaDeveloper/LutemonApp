@@ -47,7 +47,6 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
             expTextView = itemView.findViewById(R.id.lutemonExpText);
             atkTextView = itemView.findViewById(R.id.lutemonAtkText);
             maxhpTextView = itemView.findViewById(R.id.lutemonMaxHpText);
-            hpTextView = itemView.findViewById(R.id.lutemonHpText);
             defenceTextView = itemView.findViewById(R.id.lutemonDefText);
             lutemonCheckbox = itemView.findViewById(R.id.lutemonCheckBox);
         }//Stats layout texts
@@ -78,7 +77,6 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
             //Convert int to String for experience, attack, health, max health, and defence
             expTextView.setText(lutemon.getExperience()+" exp");
             atkTextView.setText(lutemon.getAttack()+" atk");
-            hpTextView.setText(lutemon.getHealth()+"/");
             maxhpTextView.setText(lutemon.getMaxHealth()+" hp");
             defenceTextView.setText(lutemon.getDefence()+" def");
         }

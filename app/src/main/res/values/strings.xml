@@ -42,7 +42,7 @@
     <string name="train_lutemon">Train Lutemon</string>
     <string name="move_lutemon_to_home">Move home</string>
     <string name="battlefield">Battlefield</string>
-    <string name="next_attack">Next Attack</string>
+    <string name="next_attack">Fight</string>
     <string name="end_battle">End Battle</string>
 
     <string name="attack_format">Attack: %d</string>
