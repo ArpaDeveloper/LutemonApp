@@ -79,27 +79,17 @@
         app:layout_constraintTop_toBottomOf="@+id/lutemonExpText" />
 
     <!--Health text-->
-    <TextView
-        android:id="@+id/lutemonHpText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="5dp"
-        android:text="@string/hp"
-        android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/lutemonExpText"
-        app:layout_constraintTop_toBottomOf="@+id/lutemonColorText" />
 
     <!--MaxHealth text-->
     <TextView
         android:id="@+id/lutemonMaxHpText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="5dp"
         android:text="@string/hp"
         android:textSize="20sp"
-        app:layout_constraintStart_toEndOf="@+id/lutemonHpText"
+        app:layout_constraintStart_toEndOf="@+id/lutemonExpText"
         app:layout_constraintTop_toBottomOf="@+id/lutemonColorText" />
 
 
