@@ -2,7 +2,7 @@ package com.example.lutemongo.lutemonhandling;
 
 public class Lutemon {
 
-    //Variables
+    // Variables
     private String name;
     private String color;
     private int attack;
@@ -15,8 +15,8 @@ public class Lutemon {
     private int wins;
 
 
-    //Constructor
-    public Lutemon(String name, String  color, int attack,int health, int max_health, int defence, int experience){
+    // Constructor
+    public Lutemon(String name, String  color, int attack,int health, int max_health, int defence, int experience, int battles, int wins){
         this.name = name;
         this.color = color;
         this.attack = attack;
@@ -24,9 +24,11 @@ public class Lutemon {
         this.health = health;
         this.defence = defence;
         this.experience = experience;
+        this.battls = battles;
+        this.wins = wins;
     }
 
-    //Used for the lutemon selection
+    // Used for the lutemon selection
     public boolean isSelected() {
         return isSelected;
     }
@@ -35,7 +37,7 @@ public class Lutemon {
         isSelected = selected;
     }
 
-    //Getters
+    // Getters
     public String getName(){
         return name;
     }
@@ -65,7 +67,7 @@ public class Lutemon {
     }
 
 
-    //Setters
+    // Setters
     public void setName(String name){
         this.name = name;
     }
@@ -98,11 +100,12 @@ public class Lutemon {
         return battls;
     }
     public void setBattls(int battles){
+        this.battls = battles;
     }
     public int getWins() {
         return wins;
     }
     public void setWins(int wins){
+        this.wins = wins;
     }
-
 }

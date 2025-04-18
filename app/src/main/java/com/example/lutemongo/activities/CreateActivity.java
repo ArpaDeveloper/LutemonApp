@@ -17,7 +17,7 @@ import com.google.android.material.textfield.TextInputLayout;
  * CreateActivity handles create ui actions
  */
 public class CreateActivity extends AppCompatActivity {
-    //Variables
+    // Variables
     private TextInputEditText nameInput;
     private RadioGroup colorGroup;
     private CreateLutemon createLutemon;
@@ -27,19 +27,19 @@ public class CreateActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create);
 
-        //Initialize UI elements - fix the TextInputEditText reference
+        // Initialize UI elements - fix the TextInputEditText reference
         TextInputLayout textInputLayout = findViewById(R.id.textInputLayout);
         nameInput = (TextInputEditText) textInputLayout.getEditText();
         colorGroup = findViewById(R.id.colorRadioGroup);
         Button createButton = findViewById(R.id.create_button);
 
-        //Initialize the UIHandler
+        // Initialize the UIHandler
         UIHandler uiHandler = new UIHandler(this);
 
-        //Initialize CreateLutemon
+        // Initialize CreateLutemon
         createLutemon = new CreateLutemon(this);
 
-        //Set up create button listener
+        // Set up create button listener
         createButton.setOnClickListener(v -> {
             if (createLutemon.createNewLutemon(nameInput, colorGroup)) {
                 Toast.makeText(this, "Lutemon created successfully!", Toast.LENGTH_SHORT).show();
@@ -47,7 +47,7 @@ public class CreateActivity extends AppCompatActivity {
             }
         });
 
-        //Set up button listeners for CreateActivity
+        // Set up button listeners for CreateActivity
         uiHandler.setupCreateActivityButtons(this);
     }
 

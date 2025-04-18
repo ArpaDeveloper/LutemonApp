@@ -7,9 +7,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class RecyclerViewUtil {
 
-    //Method to setup the recyclerView
+    // Method to setup the recyclerView
     public static RecyclerView setupRecyclerView(AppCompatActivity activity, int recyclerViewId){
-        //Find the recyclerview and set it layout and size.
+        // Find the recyclerview and set it layout and size.
         RecyclerView recyclerView = activity.findViewById(recyclerViewId);
         recyclerView.setLayoutManager(new LinearLayoutManager(activity));
         recyclerView.setHasFixedSize(true);
