@@ -61,17 +61,6 @@
 
     <!--View Charts Button-->
 
-    <TextView
-        android:id="@+id/StatsFillText3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/placeholder"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/StatsFillText2" />
-
     <Button
         android:id="@+id/view_charts_button"
         android:layout_width="250dp"
@@ -108,13 +97,11 @@
         android:layout_width="409dp"
         android:layout_height="300dp"
         android:layout_marginStart="1dp"
-        android:layout_marginTop="1dp"
         android:layout_marginEnd="1dp"
         android:layout_marginBottom="1dp"
+        android:contentDescription="@string/placeholder"
         app:layout_constraintBottom_toTopOf="@+id/view_charts_button"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        android:contentDescription="@string/placeholder"
-        app:layout_constraintTop_toBottomOf="@+id/StatsFillText3" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

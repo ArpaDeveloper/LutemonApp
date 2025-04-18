@@ -82,9 +82,9 @@ public class LutemonViewHolder extends RecyclerView.ViewHolder {
         }
         else if(layoutResId == R.layout.item_layout_stats) {
             //Convert int to String for battles,wins,training
-            battlesTextView.setText(String.valueOf(lutemon.getExperience())); //Change after having method for these values
-            winsTextView.setText(String.valueOf(lutemon.getAttack()));
-            trainingTextView.setText(String.valueOf(lutemon.getHealth()));
+            battlesTextView.setText(String.valueOf(lutemon.getBattles()));
+            winsTextView.setText(String.valueOf(lutemon.getWins()));
+            trainingTextView.setText(String.valueOf(lutemon.getExperience()));
         }
 
 
