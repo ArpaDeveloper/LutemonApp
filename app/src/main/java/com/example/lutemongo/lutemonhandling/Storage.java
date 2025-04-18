@@ -3,6 +3,7 @@ package com.example.lutemongo.lutemonhandling;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
+import android.util.Pair;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -15,16 +16,22 @@ public class Storage {
     private List<Lutemon> lutemons;
     private Lutemon activeTeamLutemon;
     private Lutemon activeTrainingLutemon;
+    private Lutemon activeEnemyLutemon;
     private static Storage instance;
     private static final String PREF_NAME = "lutemon_storage";
     private static final String KEY_LUTEMONS = "lutemons";
     private static final String KEY_TEAM_LUTEMON = "team_lutemon";
+    private static final String KEY_ENEMY_LUTEMON = "enemy_lutemon";
+
+
 
     // Private constructor for singleton
     private Storage() {
         lutemons = new ArrayList<>();
         activeTeamLutemon = null;
         activeTrainingLutemon = null;
+        activeEnemyLutemon = null;
+
     }
 
     // Singleton implementation
@@ -81,6 +88,56 @@ public class Storage {
 
         activeTeamLutemon = lutemon;
         return true;
+    }
+
+    /**
+     * Set the active Lutemon for the enemy team
+     * @param lutemon Lutemon to set as enemy
+     * @return boolean indicating success
+     */
+    public boolean setEnemyLutemon(Lutemon lutemon) {
+        if (lutemon == null) {
+            return false;
+        }
+
+        // Verify the Lutemon exists in storage
+        boolean exists = false;
+        for (Lutemon storedLutemon : lutemons) {
+            if (storedLutemon == lutemon) {
+                exists = true;
+                break;
+            }
+        }
+
+        if (!exists) {
+            return false;
+        }
+
+        activeEnemyLutemon = lutemon;
+        return true;
+    }
+
+    /**
+     * Get active enemy Lutemon
+     * @return Current active enemy Lutemon
+     */
+    public Lutemon getEnemyLutemon() {
+        return activeEnemyLutemon;
+    }
+
+    /**
+     * Check if there is an active enemy Lutemon
+     * @return true if enemy has a Lutemon
+     */
+    public boolean hasEnemyLutemon() {
+        return activeEnemyLutemon != null;
+    }
+
+    /**
+     * Clear enemy Lutemon
+     */
+    public void removeEnemyLutemon() {
+        activeEnemyLutemon = null;
     }
 
     /**
@@ -174,6 +231,7 @@ public class Storage {
         lutemons.clear();
         activeTeamLutemon = null;
         activeTrainingLutemon = null;
+        activeEnemyLutemon = null;
     }
 
     /**
@@ -214,6 +272,13 @@ public class Storage {
             }
             editor.putInt(KEY_TEAM_LUTEMON, teamLutemonIndex);
 
+            // Save enemy Lutemon index
+            int enemyLutemonIndex = -1;
+            if (activeEnemyLutemon != null) {
+                enemyLutemonIndex = lutemons.indexOf(activeEnemyLutemon);
+            }
+            editor.putInt(KEY_ENEMY_LUTEMON, enemyLutemonIndex);
+
             return editor.commit();
         } catch (Exception e) {
             Log.e("Storage", "Error saving data: " + e.getMessage());
@@ -249,10 +314,54 @@ public class Storage {
                 activeTeamLutemon = null;
             }
 
+            // Load enemy Lutemon
+            int enemyLutemonIndex = prefs.getInt(KEY_ENEMY_LUTEMON, -1);
+            if (enemyLutemonIndex >= 0 && enemyLutemonIndex < lutemons.size()) {
+                activeEnemyLutemon = lutemons.get(enemyLutemonIndex);
+            } else {
+                activeEnemyLutemon = null;
+            }
+
             return true;
         } catch (Exception e) {
             Log.e("Storage", "Error loading data: " + e.getMessage());
             return false;
         }
+    }
+
+    /**
+     * Check if both battling Lutemons are selected
+     * @return true if both player and enemy Lutemons are selected
+     */
+    public boolean areBothBattlelutemonsSelected() {
+        return activeTeamLutemon != null && activeEnemyLutemon != null;
+    }
+
+    /**
+     * Get both battle Lutemons as a pair
+     * @return Pair of Lutemons where first is team Lutemon and second is enemy Lutemon
+     */
+    public Pair<Lutemon, Lutemon> getBattleLutemons() {
+        return new Pair<>(activeTeamLutemon, activeEnemyLutemon);
+    }
+
+    /**
+     * Clear both battle Lutemons
+     */
+    public void clearBattleLutemons() {
+        activeTeamLutemon = null;
+        activeEnemyLutemon = null;
+    }
+
+    /**
+     * Set both battle Lutemons at once
+     * @param teamLutemon Player's Lutemon
+     * @param enemyLutemon Enemy's Lutemon
+     * @return true if both were set successfully
+     */
+    public boolean setBattleLutemons(Lutemon teamLutemon, Lutemon enemyLutemon) {
+        boolean teamSet = setTeamLutemon(teamLutemon);
+        boolean enemySet = setEnemyLutemon(enemyLutemon);
+        return teamSet && enemySet;
     }
 }
