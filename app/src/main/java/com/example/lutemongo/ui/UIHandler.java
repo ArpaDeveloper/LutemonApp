@@ -150,7 +150,6 @@ public class UIHandler {
      * @param activity The activity whose buttons are being configured.
      */
     public void setupStatisticsActivityButtons(@NonNull Activity activity) {
-        Button viewChartsButton = activity.findViewById(R.id.view_charts_button);
         Button mainButton = activity.findViewById(R.id.main_button);
 
         mainButton.setOnClickListener(v -> goToMainScreen());

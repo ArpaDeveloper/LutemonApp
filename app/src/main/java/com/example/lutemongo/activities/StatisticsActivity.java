@@ -51,14 +51,14 @@ public class StatisticsActivity extends AppCompatActivity {
 
         List<Lutemon> allLutemons = storage.getLutemons();
         int totalBattles = 0;
-        int totalWins = 0;
+        int totalExp = 0;
 
         for (Lutemon lutemon : allLutemons) {
             totalBattles += lutemon.getBattles();
-            totalWins += lutemon.getWins();
+            totalExp += lutemon.getExperience();
         }
 
         totalBattlesText.setText("Total battles "+String.valueOf(totalBattles));
-        totalWinsText.setText("Total wins "+String.valueOf(totalWins));
+        totalWinsText.setText("Total training "+String.valueOf(totalExp));
     }
 }
