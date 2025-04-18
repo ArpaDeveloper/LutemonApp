@@ -11,6 +11,9 @@ public class Lutemon {
     private int defence;
     private int experience;
     private boolean isSelected = false;
+    private int battls;
+    private int wins;
+
 
     //Constructor
     public Lutemon(String name, String  color, int attack,int health, int max_health, int defence, int experience){
@@ -91,5 +94,15 @@ public class Lutemon {
         this.experience = experience;
     }
 
+    public int getBattles() {
+        return battls;
+    }
+    public void setBattls(int battles){
+    }
+    public int getWins() {
+        return wins;
+    }
+    public void setWins(int wins){
+    }
 
 }
