@@ -1,7 +1,7 @@
 package com.example.lutemongo.lutemonhandling;
 
 import android.content.Context;
-import android.util.Log;
+
 
 import com.example.lutemongo.ui.ErrorHandler;
 import com.example.lutemongo.ui.LutemonAdapter;
@@ -13,7 +13,7 @@ public class LutemonManager {
 
 
     private LutemonAdapter adapter;
-    private Storage storage;
+    Storage storage;
     private Context context;
 
     // Add a constructor to initialize the fields
@@ -65,10 +65,16 @@ public class LutemonManager {
         else{
             // Move to fight
             Lutemon teamLutemon = selectedLutemons.get(0);
-            storage.setTeamLutemon(teamLutemon);
+            //storage.setTeamLutemon(teamLutemon);
             Lutemon enemyLutemon = selectedLutemons.get(1);
-            storage.setEnemyLutemon(enemyLutemon);
+            //storage.setEnemyLutemon(enemyLutemon);
+            storage.setBattleLutemons(teamLutemon, enemyLutemon);
+
         }
+    }
+
+    public Storage getStorage() {
+        return storage;
     }
 
 }
