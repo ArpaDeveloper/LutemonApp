@@ -98,11 +98,12 @@ public class Lutemon {
         return battls;
     }
     public void setBattls(int battles){
+        this.battls = battles;
     }
     public int getWins() {
         return wins;
     }
     public void setWins(int wins){
+        this.wins = wins;
     }
-
 }
