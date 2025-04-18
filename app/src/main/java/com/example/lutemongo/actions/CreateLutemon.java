@@ -67,9 +67,9 @@ public class CreateLutemon {
         // Save to disk after creating a new Lutemon
         if (added) {
             if (storage.saveToSharedPreferences(context)) {
-                Toast.makeText(context, "Lutemon created and saved successfully!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Lutemon created and saved successfully!", Toast.LENGTH_SHORT).show();
             } else {
-                Toast.makeText(context, "Lutemon created but couldn't be saved", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(context, "Lutemon created but couldn't be saved", Toast.LENGTH_SHORT).show();
             }
         }
 
