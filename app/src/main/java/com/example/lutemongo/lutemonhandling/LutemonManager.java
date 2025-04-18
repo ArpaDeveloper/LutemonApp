@@ -1,6 +1,7 @@
 package com.example.lutemongo.lutemonhandling;
 
 import android.content.Context;
+import android.util.Log;
 
 import com.example.lutemongo.ui.ErrorHandler;
 import com.example.lutemongo.ui.LutemonAdapter;
@@ -50,7 +51,6 @@ public class LutemonManager {
     public void moveSelectedLutemonsToFight() {
         List<Lutemon> lutemons = storage.getLutemons();
         List<Lutemon> selectedLutemons = new ArrayList<>();
-        List<Lutemon> fightingLutemonList = new ArrayList<>();
 
         // Find selected lutemons
         for (Lutemon lutemon : lutemons) {

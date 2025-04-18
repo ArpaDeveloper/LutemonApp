@@ -14,6 +14,7 @@ import com.example.lutemongo.ui.UIHandler;
 
 public class FightActivity extends AppCompatActivity {
 
+    BattleSystem battleSystem = new BattleSystem();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +29,9 @@ public class FightActivity extends AppCompatActivity {
         Button FightButton = findViewById(R.id.nextAttackButton);
         TextView battleText = findViewById(R.id.battlefieldText);
         FightButton.setOnClickListener(v -> {
-            String battleinfo = BattleSystem.startBattle();
+            String battleinfo = battleSystem.startBattle();
+            battleText.setText(battleinfo);
         });
-
-        battleText.setText();
 
 
     }

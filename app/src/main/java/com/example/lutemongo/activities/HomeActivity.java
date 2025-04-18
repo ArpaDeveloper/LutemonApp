@@ -42,7 +42,6 @@ public class HomeActivity extends AppCompatActivity {
         LoadLutemonsFromFile loader = new LoadLutemonsFromFile(recyclerView, R.layout.item_layout_home);
         loader.loadLutemonData();
 
-        //Initialize LutemonManager
 
         LutemonAdapter adapter = new LutemonAdapter(lutemons, null,R.layout.item_layout_home);
         lutemonManager = new LutemonManager(this, adapter);
