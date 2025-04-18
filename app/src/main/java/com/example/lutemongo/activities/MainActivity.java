@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity {
         if (storage.loadFromSharedPreferences(this)) {
             int count = storage.getLutemonCount();
             if (count > 0) {
-                //Toast.makeText(this, "Loaded " + count + " Lutemons", Toast.LENGTH_SHORT).show();
+                // Toast.makeText(this, "Loaded " + count + " Lutemons", Toast.LENGTH_SHORT).show();
             }
         }
 
