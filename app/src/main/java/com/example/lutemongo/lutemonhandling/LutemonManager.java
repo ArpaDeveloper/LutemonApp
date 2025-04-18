@@ -59,19 +59,16 @@ public class LutemonManager {
             }
         }
 
-        if(selectedLutemons.size() != 2){
+        if (selectedLutemons.size() != 2) {
             ErrorHandler.showError(context, "Choose 2");
-        }
-        else{
+        } else {
             // Move to fight
             Lutemon teamLutemon = selectedLutemons.get(0);
-            //storage.setTeamLutemon(teamLutemon);
             Lutemon enemyLutemon = selectedLutemons.get(1);
-            //storage.setEnemyLutemon(enemyLutemon);
-            storage.setBattleLutemons(teamLutemon, enemyLutemon);
-
+            if (storage.setBattleLutemons(teamLutemon, enemyLutemon)) {
+                // Save the selections to disk
+                storage.saveToSharedPreferences(context);
+            }
         }
     }
-    }
-
 }
